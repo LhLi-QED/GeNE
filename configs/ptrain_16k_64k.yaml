@@ -1,0 +1,44 @@
+task: "ptrain"
+
+model:
+  model_name_or_path: './model/llama2_7b/'
+  tokenizer_name_or_path: './model/llama2_7b/'
+
+gene_config:
+  type: "gene"
+  factor: 16.0
+  num_rotations: 3.0
+  training_seq_len: 16384
+  gene_random_scale: true
+  log_scale: false
+
+data:
+  train_data_path: './data/finetune_16k.jsonl'
+  max_length: 16384
+
+train:
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8
+  num_train_epochs: 1
+  lr_scheduler_type: 'cosine'
+  warmup_steps: 100
+  learning_rate: 0.00002
+  output_dir: './checkpoints/gene-64k'
+
+  logging_strategy: "steps"
+  save_strategy: "steps"
+
+  logging_first_step: true
+  logging_steps: 2
+  save_steps: 100
+  max_steps: 300
+  save_total_limit: 1
+  save_only_model: true
+
+  bf16: true
+  tf32: true
+
+  gradient_checkpointing: true
+
+  disable_tqdm: true
+

@@ -2,7 +2,7 @@ task: 'ift'
 
 model:
   model_name_or_path: './checkpoints/gene-16k/checkpoint-300'
-  tokenizer_name_or_path: './model/llama2_7b/'
+  tokenizer_name_or_path: 'meta-llama/Llama-2-7b-hf'
 
 gene_config:
   type: "gene"
@@ -38,6 +38,7 @@ train:
   tf32: true
 
   gradient_checkpointing: true
+  seed: 2233
 
   disable_tqdm: true
 

@@ -1084,7 +1084,7 @@ class LlamaModel(LlamaPreTrainedModel):
             )
             position_ids = position_ids.unsqueeze(0)
 
-        self.set_gene_scale(past_key_values_length)
+        self.set_gene_scale(seq_length)
 
         if inputs_embeds is None:
             inputs_embeds = self.embed_tokens(input_ids)

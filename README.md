@@ -39,3 +39,24 @@ To evaluate the accuracy of passkey retrieval, use the following command:
 ```shell
 deepspeed --num_gpus 4 passkey.py --model_path path-to-your-checkpoint --tokenizer_path path-to-tokenizer
 ```
+
+## Citation
+
+```bibtex
+@inproceedings{li-huaping-2024-context,
+    title = "Context Length Extension via Generalized Extrapolation Scale",
+    author = "Li, Linhan  and
+      Huaping, Zhang",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2024",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-acl.249/",
+    doi = "10.18653/v1/2024.findings-acl.249",
+    pages = "4211--4218"
+}
+```
